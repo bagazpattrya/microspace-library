@@ -1,0 +1,243 @@
+/* microspace-v1.0.9a */
+
+/* ==========================================================================
+   NOTIFICATION POPUP / DROPDOWN CONTAINER (ZOOM-SAFE FLEX HEIGHT)
+   ========================================================================== */
+.notification-tile {
+    max-height: calc(100dvh - 5rem) !important;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden !important;
+}
+
+.notification-tile.is-hidden {
+    display: none !important;
+}
+
+/* Open animation: panel drops in from the bell, items cascade */
+.notification-tile:not(.is-hidden) {
+    transform-origin: 80% 0; /* roughly under the bell button */
+    animation: notif-panel-in 0.28s ease-out both;
+}
+
+.notification-tile:not(.is-hidden) .notif-top-container {
+    animation: notif-item-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) 0.07s both;
+}
+
+.notification-tile:not(.is-hidden) #notification-list > * {
+    animation: notif-item-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.notification-tile:not(.is-hidden) #notification-list > *:nth-child(1) { animation-delay: 0.09s; }
+.notification-tile:not(.is-hidden) #notification-list > *:nth-child(2) { animation-delay: 0.12s; }
+.notification-tile:not(.is-hidden) #notification-list > *:nth-child(3) { animation-delay: 0.15s; }
+.notification-tile:not(.is-hidden) #notification-list > *:nth-child(4) { animation-delay: 0.18s; }
+.notification-tile:not(.is-hidden) #notification-list > *:nth-child(n+5) { animation-delay: 0.21s; }
+
+@keyframes notif-panel-in {
+    0% { opacity: 0; transform: translateY(-24px) scale(0.2); }
+    35% { opacity: 1; }
+    65% { transform: translateY(4px) scale(1.04); }
+    82% { transform: translateY(-1px) scale(0.99); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Close animation: reverse of the open, shrinks back into the bell */
+.notification-tile.is-closing:not(.is-hidden) {
+    animation: notif-panel-out 0.18s ease-in both;
+    pointer-events: none;
+}
+
+@keyframes notif-panel-out {
+    0% { opacity: 1; transform: translateY(0) scale(1); }
+    25% { transform: translateY(2px) scale(1.03); }
+    100% { opacity: 0; transform: translateY(-24px) scale(0.2); }
+}
+
+@keyframes notif-item-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bell button: click feedback + open state */
+#toggleNotification,
+#toggleSettingAccount {
+    border-radius: 50%;
+    position: relative;
+}
+
+#toggleNotification.is-clicked,
+#toggleSettingAccount.is-clicked {
+    animation: notif-btn-click 0.4s ease-out;
+}
+
+#toggleNotification.is-open,
+#toggleSettingAccount.is-open {
+    color: var(--primary-color);
+}
+
+#toggleSettingAccount.is-open > i,
+#toggleSettingAccount.is-open > img {
+    transform: scale(1.12);
+}
+
+#toggleNotification.is-open .position-relative > i {
+    transform: rotate(-12deg) scale(1.1);
+}
+
+@keyframes notif-btn-click {
+    0% { transform: scale(1); }
+    30% { transform: scale(0.05); }
+    65% { transform: scale(1.5); }
+    85% { transform: scale(0.94); }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .notification-tile:not(.is-hidden),
+    .notification-tile.is-closing:not(.is-hidden),
+    .notification-tile:not(.is-hidden) .notif-top-container,
+    .notification-tile:not(.is-hidden) #notification-list > *,
+    #toggleNotification.is-clicked,
+    #toggleSettingAccount.is-clicked {
+        animation: none;
+    }
+}
+
+.notification-tile .notif-top-container {
+    flex: 0 0 auto !important;
+}
+
+.notification-tile .notification-container,
+#notification-list {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-right: 4px !important;
+    overscroll-behavior: contain !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent !important;
+}
+
+#notification-list::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+#notification-list::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 4px !important;
+}
+
+#notification-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-radius: 10px !important;
+}
+
+#notification-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.notif-meta {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.notif-meta .bi {
+    font-size: 0.65rem;
+}
+
+/* ==========================================================================
+   NOTIFICATION FULL PAGE LAYOUT
+   ========================================================================== */
+.notif-page-container {
+    min-height: calc(100dvh - 3.5rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.notif-page-container .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.notif-page-container .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.notif-empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE TWEAKS
+   ========================================================================== */
+@media (max-width: 576px) {
+    .notification-tile {
+        max-height: calc(100dvh - 3.5rem) !important;
+    }
+    .notif-card-header {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+    }
+    .notif-card-header .btn {
+        align-self: flex-start !important;
+    }
+    .notif-item {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+        gap: 0.6rem !important;
+    }
+    .notif-avatar {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    .notif-title-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.1rem !important;
+    }
+    .notif-title {
+        font-size: 0.85rem !important;
+    }
+    .notif-message {
+        font-size: 0.78rem !important;
+    }
+    .notif-time {
+        font-size: 0.68rem !important;
+    }
+}
+
+.opacity-100-hover:hover {
+    opacity: 1 !important;
+}
+
+.notif-unread {
+    background-color: var(
+        --bs-warning-bg-subtle,
+        rgba(255, 193, 7, 0.1)
+    ) !important;
+}
+
+.notif-unread:hover,
+.notif-read:hover {
+    background-color: var(--bs-tertiary-bg) !important;
+}

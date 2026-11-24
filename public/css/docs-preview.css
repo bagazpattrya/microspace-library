@@ -1,0 +1,25 @@
+/* Hanya untuk preview docs: gaya lebih flat. File komponen di microspace/ tidak diubah. */
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, button, input, select { font-family: "Inter", system-ui, sans-serif; }
+body { font-size: .9rem; letter-spacing: -.005em; }
+.btn { border-radius: 8px; font-weight: 600; box-shadow: none !important; }
+.form-control, .form-select { border-radius: 8px; }
+.card, .modal-content, .dropdown-menu { border-radius: 12px; }
+.card, .modal-content { box-shadow: none !important; border: 1px solid var(--border-low); }
+.card:hover { transform: none !important; box-shadow: none !important; border-color: var(--accent); }
+table.dataTable thead th { font-weight: 600; font-size: .8rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-medium) !important; }
+table.dataTable tbody td { border-top: 1px solid var(--border-low); padding: .7rem .9rem; }
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd { background: transparent; }
+
+/* Variabel yang dipakai microspace/*.css tapi tidak didefinisikan di file tema; tanpa ini tombol/hover transparan. */
+:root {
+    --golden-solid: #1e6fd9;
+    --gold-dark-solid: #1857ae;
+    --golden-gradient: linear-gradient(135deg, #1e6fd9, #1857ae);
+    --primary-color: #1e6fd9;
+    --primary-color-hover: #1857ae;
+    --primary-color-lighter: rgba(30, 111, 217, .15);
+    --primary-rgb: 30, 111, 217;
+    --primary-text-color: #fff;
+    --secondary-lighter-color: rgba(255, 255, 255, .08);
+}
+[data-bs-theme="light"] { --secondary-lighter-color: rgba(16, 24, 40, .06); }

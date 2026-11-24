@@ -1,0 +1,571 @@
+/* microspace-v1.0.9a */
+.sidebar-wrapper {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    justify-content: flex-start;
+    align-items: center;
+    width: clamp(280px, 20vw, 320px);
+    height: 100vh;
+    z-index: 1000;
+}
+
+.sidebar-container {
+    height: calc(100vh - 30px);
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: var(--background-level-2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* Logo Section */
+.sidebar-top-logo {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    text-decoration: none;
+}
+
+.sidebar-top-logo p {
+    margin-bottom: 10px;
+    margin-left: 80px;
+    font-size: 1.2rem;
+    color: var(--main-text);
+}
+
+/* Profile Section */
+.sidebar-middle-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 0px 0px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--accent);
+    padding: 3px;
+    background: transparent;
+    transition: transform 0.5s ease;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.custom-text {
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--main-text);
+}
+
+.jabatan-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    color: var(--main-text);
+}
+
+.sidebar-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 8px;
+    min-height: 0;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.sidebar-item::-webkit-scrollbar {
+    display: none;
+}
+
+.li-item-sidebar {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 12px;
+    color: var(--main-text);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.li-item-sidebar:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+.li-item-icon {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.li-item-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: inherit;
+}
+
+/* Active State */
+.item-active {
+    background: var(--accent) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transform: translateX(8px);
+}
+
+.item-active .li-item-title {
+    font-weight: 700;
+}
+
+/* =========================================
+   COLLAPSIBLE SIDEBAR
+========================================= */
+
+.sidebar-wrapper {
+    transition: all 0.4s ease;
+}
+
+.sidebar-container {
+    transition: all 0.6s ease;
+}
+
+/* collapsed state */
+
+.sidebar-wrapper.sidebar-collapsed {
+    width: 90px;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-container {
+    width: 95%;
+}
+
+/* toggle button */
+
+.sidebar-collapse-btn {
+    border: none;
+    background: transparent;
+    color: var(--main-text);
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* profile */
+
+.sidebar-wrapper.sidebar-collapsed .display-name {
+    display: none;
+}
+
+.sidebar-wrapper.sidebar-collapsed .profile-photo {
+    width: 50px;
+    height: 50px;
+}
+
+/* logo */
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-top-logo p {
+    display: none;
+}
+
+/* menu */
+
+.sidebar-wrapper.sidebar-collapsed .li-item-title {
+    display: none;
+}
+
+.sidebar-wrapper.sidebar-collapsed .li-item-sidebar {
+    justify-content: center;
+    padding: 14px;
+}
+
+.sidebar-wrapper.sidebar-collapsed .li-item-icon {
+    margin-right: 0;
+}
+
+/* active */
+
+.sidebar-wrapper.sidebar-collapsed .item-active {
+    transform: none;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 20px;
+}
+
+.sidebar-top-logo {
+    flex: 1;
+    height: auto;
+    padding: 0;
+    justify-content: center;
+}
+
+.sidebar-collapse-btn {
+    width: 100%;
+    height: 42px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--main-text);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.sidebar-collapse-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-footer {
+    padding: 10px;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-collapse-btn {
+    width: 42px;
+}
+
+.sidebar-version {
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--main-text);
+    opacity: 0.5;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-version {
+    display: none;
+}
+
+.sidebar-footer-btn {
+    width: 100%;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--main-text);
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.sidebar-footer-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-collapse-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-header {
+    justify-content: center;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-logo-text {
+    display: none;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-header {
+    justify-content: center;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-top-logo {
+    justify-content: center;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-logo-img {
+    margin: 0;
+}
+
+.main-content-wrapper {
+    transition:
+        margin-left 0.4s ease,
+        width 0.4s ease;
+}
+
+.main-wrapper.sidebar-collapsed .main-content-wrapper {
+    margin-left: 100px;
+    width: calc(100vw - 100px);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    height: 80px;
+    gap: 10px;
+}
+
+.sidebar-top-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    overflow: hidden;
+    flex: 1;
+}
+
+.sidebar-logo-img {
+    height: 1.8em;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.sidebar-logo-text {
+    font-size: 1rem;
+    color: var(--main-text);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+}
+
+.sidebar-collapse-btn {
+    border: none;
+    background: transparent;
+    color: var(--main-text);
+    cursor: pointer;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition: background 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-collapse-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-header {
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-top-logo {
+    justify-content: center;
+}
+/* =========================================
+   LAPTOP OPTIMIZATION
+   ========================================= */
+
+/* default desktop */
+.sidebar-wrapper {
+    width: clamp(280px, 20vw, 320px);
+}
+
+/* container */
+.sidebar-container {
+    height: calc(100vh - 30px);
+    max-height: 95vh;
+}
+
+/* profile lebih compact */
+.sidebar-middle-profile {
+    padding: 8px 0;
+    margin-bottom: 10px;
+}
+
+.profile-photo {
+    width: 60px;
+    height: 60px;
+}
+
+.custom-text {
+    font-size: 14px;
+}
+
+.jabatan-title {
+    font-size: 10px;
+}
+
+/* menu */
+.sidebar-item {
+    padding: 0 14px;
+    gap: 5px;
+}
+
+.li-item-sidebar {
+    padding: 9px 12px;
+
+    min-height: 42px;
+}
+
+.li-item-icon {
+    font-size: 1rem;
+
+    margin-right: 10px;
+}
+
+.li-item-title {
+    font-size: 13px;
+}
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   Laptop kecil 1366x768
+   ========================================= */
+
+/* Saat collapse */
+.sidebar-wrapper.sidebar-collapsed .sidebar-version {
+    display: none;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-footer-btn span {
+    display: none;
+}
+
+.sidebar-wrapper.sidebar-collapsed .sidebar-footer-btn {
+    width: 42px;
+    height: 42px;
+}
+
+@media (max-width: 1400px) {
+    .sidebar-wrapper {
+        width: 260px;
+    }
+
+    .sidebar-container {
+        height: 96vh;
+        border-radius: 15px;
+    }
+
+    .sidebar-header {
+        height: 65px;
+        padding: 12px 10px;
+    }
+
+    .sidebar-logo-img {
+        height: 28px;
+    }
+
+    .sidebar-logo-text {
+        font-size: 0.85rem;
+    }
+
+    .profile-photo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .li-item-sidebar {
+        padding: 8px 10px;
+    }
+}
+
+/* =========================================
+   Laptop kecil 1280x720
+   ========================================= */
+
+@media (max-width: 1280px) {
+    .sidebar-wrapper {
+        width: 250px;
+    }
+
+    .sidebar-container {
+        height: 97vh;
+    }
+
+    .sidebar-middle-profile {
+        margin-bottom: 5px;
+    }
+
+    .display-name {
+        transform: scale(0.9);
+    }
+
+    .li-item-title {
+        font-size: 12px;
+    }
+
+    .li-item-icon {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================================
+   Tinggi pendek (720px kebawah)
+   ========================================= */
+
+@media (max-height: 750px) {
+    .sidebar-header {
+        height: 55px;
+        padding: 8px 10px;
+    }
+
+    .profile-photo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .sidebar-middle-profile {
+        margin-bottom: 5px;
+    }
+
+    .custom-text {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .li-item-sidebar {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}

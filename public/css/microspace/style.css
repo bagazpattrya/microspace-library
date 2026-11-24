@@ -1,0 +1,1017 @@
+/* microspace-v1.0.9a */
+
+/* public/css/reset.css */
+
+/* Reset margins and padding for all elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+    color: var(--main-text) !important;
+}
+
+/* Apply a universal box-sizing to ensure consistent sizing behavior */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+td {
+    font-size: smaller;
+}
+
+a {
+    font-size: small;
+    text-decoration: none !important;
+}
+
+.badge.bg-primary {
+    background-color: var(--golden-solid) !important;
+}
+
+.oso-a {
+    color: var(--golden-solid);
+}
+
+.oso-a:hover {
+    color: var(--gold-dark-solid);
+}
+
+/* .oso-a a {
+    color: var(--golden-solid) !important;
+} */
+
+.modal-content {
+    padding: 5%;
+    background: var(--background-level-4) !important;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2vh;
+    column-gap: 2vh;
+}
+
+.glass-effect {
+    background: rgba(14, 14, 14, 0.301) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.glass-effect .form-control {
+    background: rgba(29, 29, 29, 0.15) !important;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 8px !important;
+}
+
+.glass-effect .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.icon-text-group {
+    gap: 4px; /* Custom spacing between icon and text */
+}
+
+.ask-button {
+    color: black !important;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    background: var(--golden-solid);
+    border-radius: 8px;
+    padding: 3%;
+}
+
+.cancel-button {
+    background-color: rgb(252, 113, 113);
+}
+
+.cancel-button:hover {
+    background-color: rgb(179, 69, 69) !important;
+}
+
+.ask-button:hover {
+    background: var(--gold-dark-solid);
+}
+
+html,
+body {
+    background: var(--background-level-1);
+}
+
+.bg-800 {
+    background: var(--background-800) !important;
+}
+
+.bg-900 {
+    background: var(--background-900) !important;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-round {
+    border-radius: 50px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.profile-photo {
+    aspect-ratio: 1/1;
+    width: 40%;
+    border-radius: 50%; /* Makes the frame circular */
+    overflow: hidden; /* Hides the parts of the image outside the circular frame */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    background-color: #ff3e3e; /* Background color of the circular frame */
+}
+
+.unread-lighter {
+    display: flex;
+    width: 1vh;
+    height: 100%;
+    background-color: var(--primary-color-lighter);
+}
+
+.notification-pop {
+    display: inline;
+    position: fixed !important;
+    height: 2vh !important;
+    width: 2vh !important;
+    background-color: red;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin-right: 7.5vw;
+    margin-bottom: 97vh;
+    border-radius: 50%;
+    z-index: 999 !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.right-selector {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.btn-primary {
+    background-color: var(--golden-solid);
+    outline: none !important;
+    border: none !important;
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+    background-color: var(--golden-solid);
+    opacity: 0.5; /* Standard way to show "faded" state */
+    pointer-events: none; /* Prevents click/hover events */
+    cursor: not-allowed !important; /* Shows the "circle-slash" cursor */
+    box-shadow: none; /* Removes any active shadows */
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-dark-solid);
+    /* Other button styles */
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: var(--primary-text-color);
+    --bs-btn-hover-bg: var(--primary-color-hover);
+    --bs-btn-hover-border-color: var(--primary-color-hover);
+    --bs-btn-focus-shadow-rgb: 166, 124, 0;
+    --bs-btn-active-color: var(--primary-text-color);
+    --bs-btn-active-bg: var(--primary-color);
+    --bs-btn-active-border-color: var(--primary-color);
+}
+
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show {
+    color: var(--bs-btn-active-color) !important;
+    background-color: var(--bs-btn-active-bg) !important;
+    border-color: var(--bs-btn-active-border-color) !important;
+}
+
+.custom-form-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: -1%;
+}
+
+.label-text {
+    color: black;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.main-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh; /* old */
+    height: 100dvh; /* add this — real visible height */
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+    outline: none;
+    border: 1px solid transparent;
+}
+
+.device-photo {
+    aspect-ratio: 1/1;
+    width: 100%;
+    overflow: hidden; /* Hides the parts of the image outside the circular frame */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    background-color: #f0f0f000; /* Background color of the circular frame */
+}
+
+.device-photo img {
+    max-width: 100%;
+}
+
+.profile-photo-card {
+    aspect-ratio: 1/1;
+    width: 90%;
+    border-radius: 50%; /* Makes the frame circular */
+    overflow: hidden; /* Hides the parts of the image outside the circular frame */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    background-color: #f0f0f0; /* Background color of the circular frame */
+}
+
+.profile-photo-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Maintain image aspect ratio and cover the circular frame */
+}
+
+.profile-photo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Maintain image aspect ratio and cover the circular frame */
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.li-item-icon {
+    font-size: large;
+    display: flex;
+    margin-top: -3%;
+    height: 100%;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.li-item-title {
+    font-size: medium;
+    display: flex;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20vw;
+    width: 80vw;
+    height: 100vh; /* old */
+    height: 100dvh; /* add this */
+}
+
+.top-nav-bar-wrapper {
+    display: flex;
+    width: 100%;
+    height: 7%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.top-nav-bar-left-side {
+    margin-left: 1vw;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.page-nav-container {
+    margin-top: -0.8%;
+    font-size: 0.7rem !important;
+    color: var(--golden-solid) !important;
+    z-index: 1000;
+}
+
+.page-nav-container a {
+    font-size: 0.7rem !important;
+    color: var(--golden-solid) !important;
+}
+
+.page-nav-container a:hover {
+    color: var(--gold-dark-solid);
+}
+
+.page-title-container {
+    display: flex;
+    align-items: flex-end;
+    height: 80%;
+    width: 100%;
+    color: var(--primary-text-color);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.toolbar-container {
+    display: flex;
+    height: 100%;
+    width: 25%;
+}
+
+.toolbar-item-container {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.toolbar-item {
+    display: flex;
+    width: 4vw;
+    height: 4vw;
+    -webkit-text-stroke: 1px;
+    font-size: medium;
+    color: var(--golden-solid);
+    margin-left: 1%;
+    margin-right: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.toolbar-item:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Toolbar micro-interactions */
+.toolbar-item {
+    transition: color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.toolbar-item > i,
+.toolbar-item > img,
+.toolbar-item .position-relative > i {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
+}
+
+.toolbar-item:hover {
+    transform: translateY(-2px);
+}
+
+.toolbar-item:active {
+    transform: translateY(0) scale(0.92);
+}
+
+#triggerGlobalSearch:hover > i {
+    transform: scale(1.18) rotate(-12deg);
+}
+
+#theme-toggle:hover > i {
+    transform: rotate(-20deg) scale(1.15);
+}
+
+#fullscreen-btn:hover > i {
+    transform: scale(1.2);
+}
+
+#toggleSettingAccount:hover > i,
+#toggleSettingAccount:hover > img {
+    transform: scale(1.12);
+}
+
+#toggleNotification:hover .position-relative > i {
+    animation: toolbar-bell-ring 0.7s ease-in-out;
+    transform-origin: 50% 10%;
+}
+
+#toggleNotification:hover #bell-notification-badge {
+    animation: toolbar-badge-pop 0.4s ease;
+}
+
+@keyframes toolbar-bell-ring {
+    0%, 100% { transform: rotate(0); }
+    15% { transform: rotate(16deg); }
+    30% { transform: rotate(-14deg); }
+    45% { transform: rotate(10deg); }
+    60% { transform: rotate(-8deg); }
+    75% { transform: rotate(4deg); }
+}
+
+@keyframes toolbar-badge-pop {
+    0%, 100% { scale: 1; }
+    50% { scale: 1.25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toolbar-item,
+    .toolbar-item > i,
+    .toolbar-item > img {
+        transition: none;
+    }
+
+    .toolbar-item:hover,
+    .toolbar-item:hover > i,
+    .toolbar-item:hover > img,
+    #toggleNotification:hover .position-relative > i,
+    #toggleNotification:hover #bell-notification-badge {
+        transform: none;
+        animation: none;
+    }
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 91%;
+    padding-bottom: 10px; /* Gives space at the bottom */
+}
+
+.main-content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow: auto;
+    align-items: center;
+    width: 98%;
+    height: 100%;
+    padding: 1.5%;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    background: var(--background-level-2);
+
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.08);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* --- Theme Specific Rim Lighting --- */
+
+/* In Dark Mode, we add a faint highlight to the top edge (Rim light) */
+[data-bs-theme="dark"] .main-content {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* In Light Mode, we use a softer, airier shadow */
+[data-bs-theme="light"] .main-content {
+    border: 1px solid #c7cad0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+.main-content::-webkit-scrollbar {
+    display: none;
+}
+
+.main-content-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+    /* Bungkus search */
+    div.dataTables_wrapper div.dataTables_filter {
+        text-align: center !important;
+        margin-bottom: 1rem;
+        float: none !important;
+        width: 100%;
+    }
+
+    /* Input search */
+    div.dataTables_wrapper div.dataTables_filter input {
+        margin-left: 0 !important;
+        width: 90%;
+        max-width: 320px;
+    }
+
+    /* Info & Pagination juga lebih rapi */
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
+        text-align: center !important;
+        float: none !important;
+        width: 100%;
+    }
+
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: center;
+    }
+
+    .main-content {
+        padding: 0px !important;
+        padding-top: 20px !important;
+    }
+}
+
+.dropdown {
+    display: flex;
+}
+
+.dropdown-action {
+    width: 48px !important;
+    height: 48px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    color: inherit !important;
+}
+
+.dropdown-action .material-icons {
+    font-size: 32px !important;
+    line-height: 1 !important;
+}
+
+/* 1. The Entrance Animation (Pop in from nothing) */
+@keyframes popInButton {
+    0% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2) rotate(10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+/* 2. The Idle Pulse (To attract attention) */
+@keyframes pulseButton {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(var(--primary-rgb), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+    }
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 10vh;
+    right: 3vw;
+    z-index: 1000; /* Ensure the button appears on top of other elements */
+    animation: popInButton 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Soft blur halo behind the button, fading smoothly to no blur */
+.floating-button::before {
+    content: "";
+    position: absolute;
+    inset: -3rem;
+    z-index: -1;
+    pointer-events: none;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    /* eased falloff (no hard edge) */
+    -webkit-mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0.92) 30%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.42) 60%, rgba(0, 0, 0, 0.18) 75%, rgba(0, 0, 0, 0.05) 90%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0.92) 30%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.42) 60%, rgba(0, 0, 0, 0.18) 75%, rgba(0, 0, 0, 0.05) 90%, transparent 100%);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--primary-color);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0px 4px 20px rgba(10, 10, 10, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulseButton 2s infinite; /* Continuous pulse */
+    /* Separate the button from content behind it */
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+}
+
+.dataTables_wrapper .dataTables_paginate .pagination {
+    justify-content: end;
+    margin: 0;
+}
+
+.dataTables_wrapper .dataTables_paginate .page-link {
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.dataTables_wrapper .dataTables_paginate .page-item.active .page-link {
+    background: var(--golden-solid);
+    border-color: var(--golden-solid);
+    color: #fff;
+}
+
+/* 3. Hover Effects */
+.button:hover {
+    transform: scale(1.1) translateY(-5px);
+    background-color: var(
+        --secondary-color
+    ); /* Optional: change color on hover */
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: scale(0.9);
+}
+
+.spacer {
+    margin-bottom: 50vh;
+}
+
+.profile-photox {
+    max-width: 30px;
+    border-radius: 50%;
+    /* Adjust the maximum width as needed */
+    max-height: 30px;
+    /* Adjust the maximum height as needed */
+    width: auto;
+    height: auto;
+}
+
+.top-content-container {
+    display: flex;
+    width: 100%;
+    height: 5%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-top-content-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.device-status {
+    font-size: 0.8rem;
+}
+
+.button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.mobile-screen {
+    display: none !important;
+}
+
+.card-main-container {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--golden-gradient);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card-main-container a {
+    text-decoration: none;
+    color: #305270;
+}
+
+.card-main-container h5 {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.device-card {
+    display: flex;
+    height: 18vh;
+    padding: 1%;
+    padding-top: 2%;
+    flex-direction: row;
+    width: 32%;
+    border-radius: 8px;
+    background: var(--background-level-4);
+    margin-right: 1%;
+    margin-bottom: 3%;
+    color: white;
+
+    cursor: pointer;
+
+    /* Better transition control */
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.25s ease;
+
+    /* Performance boost */
+    will-change: transform;
+}
+
+/* 2. Hover Effect: Lift + Glow */
+.device-card:hover {
+    background: var(--gold-dark-solid);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* 3. Click Effect */
+.device-card:active {
+    transform: translateY(-2px) scale(0.98) !important;
+}
+
+/* 4. Entrance Animation Keyframes */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.device-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.device-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+.device-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.device-card:nth-child(4) {
+    animation-delay: 0.25s;
+}
+.device-card:nth-child(5) {
+    animation-delay: 0.3s;
+}
+.device-card:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.card-icon {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+}
+
+.card-main-content {
+    margin-left: 2%;
+    color: var(--main-text);
+}
+
+small {
+    color: rgba(255, 255, 255, 0.356);
+    font-size: xx-small;
+}
+
+.user-container {
+    display: flex;
+    padding: 4%;
+    background-color: var(--background-level-3);
+    color: white !important;
+    border-radius: 10px;
+}
+
+.icon-item-container {
+    display: flex;
+    padding: 2%;
+    background-color: var(--background-level-3);
+    border-radius: 10px;
+}
+
+.user-container:hover {
+    background-color: var(--secondary-lighter-color);
+}
+
+.user-left-container {
+    width: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo-content {
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%; /* Makes the frame circular */
+    overflow: hidden; /* Hides the parts of the image outside the circular frame */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    background-color: #f0f0f0; /* Background color of the circular frame */
+    filter: drop-shadow(6px 5px 10px #0000005b);
+}
+
+.profile-photo-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Maintain image aspect ratio and cover the circular frame */
+}
+
+.super-spacer {
+    display: flex;
+    height: 150px !important;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+.modal-backdrop {
+    display: none;
+}
+
+.text-small {
+    font-size: small !important;
+}
+
+.text-smaller {
+    font-size: smaller !important;
+}
+
+.form-control {
+    border: none !important;
+    /* border-radius: 8px !important; */
+    border: 1px solid var(--bs-border-color) !important;
+}
+
+.form-control.bg-dark {
+    background: var(--input-dark-color) !important;
+}
+
+.form-reversed {
+    background-color: var(--input-dark-color) !important;
+    border: 1px solid var(--bs-border-color) !important;
+}
+
+.form-control:focus {
+    border: 1px solid var(--primary-color) !important;
+    box-shadow: 0 0 5px var(--primary-color) !important;
+}
+
+.form-control:disabled {
+    color: rgb(131, 131, 131) !important;
+}
+
+.dropdown-toggle-icon {
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+.dropdown-toggle-icon:hover {
+    background-color: #343a40; /* dark hover */
+    color: #fff;
+}
+
+.dropdown-toggle-icon.show {
+    background-color: #2b2f33; /* active state */
+    color: #fff;
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.hover-shadow {
+    transition: all 0.3s ease;
+    /* Makes the transition smooth */
+}
+
+.hover-shadow:hover {
+    background-color: #343a40 !important;
+    /* Slightly lighter/different dark gray */
+    transform: translateY(-3px);
+    /* Subtle lift effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* The actual shadow */
+}
+
+/* Optional: Change text color on hover */
+.hover-shadow:hover p {
+    color: #fff !important;
+}
+
+/* Theme toggle icon: sun/moon spin swap */
+.theme-icon {
+    position: relative;
+    display: inline-block;
+    width: 1.35em;
+    height: 1.35em;
+    font-size: 1.15rem;
+    -webkit-text-stroke: 0;
+}
+
+.theme-icon::before {
+    display: none !important;
+}
+
+.theme-icon svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.34, 1.3, 0.64, 1), opacity 0.35s ease;
+    transform-origin: center;
+}
+
+[data-bs-theme="dark"] .theme-icon-moon,
+[data-bs-theme="light"] .theme-icon-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+[data-bs-theme="dark"] .theme-icon-sun {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.3);
+}
+
+[data-bs-theme="light"] .theme-icon-moon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.3);
+}

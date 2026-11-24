@@ -1,0 +1,30 @@
+/* microspace-v1.0.9a */
+
+.bottom-content-container {
+    width: 100%;
+    margin-bottom: 3%;
+    display: flex;
+    border-radius: 5px;
+    padding: 3%;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background-level-4);
+    color: var(--main-text);
+}
+
+.bottom-content-container:hover {
+    background-color: var(--gold-dark-solid);
+    color: var(--main-text) !important;
+    cursor: pointer;
+}
+
+[data-bs-theme="light"] .bottom-content-container:hover {
+    background-color: #fdf3d6;
+    color: var(--main-text) !important;
+}
+
+@media (max-width: 801px) {
+    .bottom-content-container {
+        /* height: 50%; */
+    }
+}

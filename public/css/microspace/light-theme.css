@@ -1,0 +1,520 @@
+/* microspace-v1.0.9a */
+
+:root {
+    /* === ELEVATED LIGHT PALETTE (Progresi Lapis Bertingkat) === */
+    --background-level-1: #f1f5f9; /* Base Canvas (Redup agar mata tidak silau) */
+    --background-level-2: #f8fafc; /* Sidebar & Navigasi Utama */
+    --background-level-3: #ffffff; /* Card Surface Putih Bersih */
+    --background-level-4: #f1f5f9; /* Sub-panel / Box Metric */
+
+    /* === TEXT HIERARCHY (Tajam & Nyaman) === */
+    --main-text: #0f172a !important;       /* Slate 900: Judul & Value Utama */
+    --text-secondary: #475569 !important;   /* Slate 600: Menu, Subjudul & Metadata */
+    --text-muted: #94a3b8 !important;       /* Slate 400: Timestamp & Caption */
+
+    /* === INTERACTIVE & BORDERS === */
+    --input-light-color: #ffffff !important;
+    --border-low: #e2e8f0;
+    --border-medium: #cbd5e1;
+
+    /* Primary Accent (Satu Warna dengan Dark Mode Anda) */
+    --accent: #1e6fd9;
+    --accent-glow: rgba(30, 111, 217, 0.12);
+}
+
+body {
+    background-color: var(--background-level-1) !important;
+    color: var(--main-text) !important;
+}
+
+/* ------------------------------------------
+   2. Refined Utilities (Mengikuti Class Dark Anda)
+------------------------------------------ */
+.bg-1 {
+    background-color: var(--background-level-1) !important;
+}
+
+.bg-2 {
+    background-color: var(--background-level-2) !important;
+}
+
+.bg-3 {
+    background-color: var(--background-level-3) !important;
+    border: 1px solid var(--border-low) !important;
+}
+
+.bg-4 {
+    background-color: var(--background-level-4) !important;
+    border: 1px solid var(--border-medium) !important;
+}
+
+.border-low {
+    border: 1px solid var(--border-low) !important;
+}
+
+.border-medium {
+    border: 1px solid var(--border-medium) !important;
+}
+
+.main-content {
+    background: var(--background-level-1) !important;
+    border-radius: 12px;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ------------------------------------------
+   3. Sidebar Overrides (Level-2 Surface)
+------------------------------------------ */
+.sidebar-container {
+    background: var(--golden-gradient) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 16px rgba(30, 111, 217, 0.25) !important;
+}
+
+/* Teks & Profile di Sidebar */
+.sidebar-container .custom-text p,
+.sidebar-container .text-bold,
+.sidebar-container p,
+.sidebar-container span,
+.sidebar-container div {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.sidebar-container .jabatan-title {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.75rem !important;
+    opacity: 1 !important;
+}
+
+/* Sidebar Logo/Icon in Light Mode */
+.sidebar-logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* Fix White Icon di Light Mode */
+.sidebar-container i,
+.sidebar-container .li-item-icon {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.sidebar-container .item-active i,
+.sidebar-container .item-active .li-item-icon {
+    color: #ffffff !important;
+}
+
+/* Menu Navigasi Sidebar */
+.sidebar-container a,
+.sidebar-container .li-item-sidebar,
+.sidebar-container .material-symbols-outlined,
+.sidebar-container i {
+    color: rgba(255, 255, 255, 0.85) !important;
+    opacity: 1 !important;
+    font-weight: 500;
+}
+
+/* Hover Menu */
+.sidebar-container .li-item-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.sidebar-container .li-item-sidebar:hover span,
+.sidebar-container .li-item-sidebar:hover i,
+.sidebar-container .li-item-sidebar:hover .material-symbols-outlined {
+    color: #ffffff !important;
+}
+
+/* Active Menu Item */
+.sidebar-container .item-active,
+.item-active {
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    background: rgba(0, 0, 0, 0.25) !important;
+    border-left: 0 !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+    position: relative;
+    border-radius: 10px !important;
+    transform: none !important;
+}
+
+.sidebar-container .item-active .li-item-title,
+.sidebar-container .item-active .li-item-icon,
+.sidebar-container .item-active .li-item-icon i,
+.sidebar-container .item-active span,
+.sidebar-container .item-active i,
+.sidebar-container .item-active .material-symbols-outlined,
+.item-active span,
+.item-active i,
+.item-active .material-symbols-outlined {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.sidebar-container .li-item-icon,
+.sidebar-container .li-item-icon i,
+.sidebar-container .li-item-icon .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Profile photo border */
+.profile-photo {
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background-color: transparent !important;
+}
+
+/* Sidebar Footer Button */
+.sidebar-footer-btn {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.sidebar-footer-btn i {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.sidebar-footer-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.sidebar-footer-btn:hover i {
+    color: #ffffff !important;
+}
+
+/* ------------------------------------------
+   4. Outlet Cards (Level-3 Surface & Elevation)
+------------------------------------------ */
+.card {
+    background: var(--background-level-3) !important;
+    border: 1px solid var(--border-low) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Metric Boxes (Revenue / Order Hari Ini) - (Level-4 Surface) */
+.card-body .col-6 > div {
+    background: var(--background-level-4) !important;
+    border: 1px solid var(--border-low) !important;
+}
+
+/* Card Text & Link Contrast */
+.card .fw-semibold,
+.card .fw-bold,
+.card a.fw-semibold {
+    color: var(--main-text) !important;
+}
+
+.card .text-muted,
+.card .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.card .material-symbols-outlined {
+    color: var(--text-muted) !important;
+}
+
+/* Card Footer */
+.card-footer {
+    border-top: 1px solid var(--border-low) !important;
+}
+
+/* ------------------------------------------
+   5. Form Controls & Search Input
+------------------------------------------ */
+.form-control#outletSearch {
+    border-color: var(--border-medium) !important;
+    color: var(--main-text) !important;
+    background: var(--input-light-color) !important;
+}
+
+.form-control#outletSearch::placeholder {
+    color: var(--text-muted) !important;
+}
+
+.form-control#outletSearch:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px var(--accent-glow) !important;
+}
+
+/* ------------------------------------------
+   6. Responsive Grid & Tool Layout
+------------------------------------------ */
+.toolbox-container {
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    width: 100%;
+    gap: 15px;
+    padding: 2%;
+    align-items: flex-start;
+}
+
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    animation: popIn 0.2s ease forwards;
+}
+
+.tool-item-icon {
+    background: var(--background-level-3);
+    width: 76px !important;
+    height: 76px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-low);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-item-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tool-item-icon span,
+.tool-item-icon i {
+    font-size: 32px !important;
+    color: var(--golden-solid, var(--accent)) !important;
+}
+
+.tool-item-text {
+    width: 100%;
+    margin-top: 8px !important;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--main-text);
+}
+
+/* Tablet Layout (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .top-layout {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 240px !important;
+        border-radius: 0 0 30px 30px;
+        background: var(--accent);
+    }
+
+    .layered-layout-container {
+        margin-top: -90px !important;
+        padding: 0 24px;
+    }
+
+    .layered-layout {
+        width: 100%;
+        border-radius: 20px;
+        background: var(--background-level-3) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-low);
+    }
+
+    .toolbox-container {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 20px !important;
+        padding: 24px !important;
+    }
+
+    .tool-item-icon {
+        width: 52px !important;
+        height: 52px !important;
+        background: var(--background-level-4) !important;
+        border: 1px solid var(--border-low) !important;
+        border-radius: 16px !important;
+    }
+
+    .tool-item-icon span,
+    .tool-item-icon i {
+        font-size: 1.5rem !important;
+        color: var(--golden-solid, var(--accent)) !important;
+    }
+
+    .tool-item-text {
+        color: var(--main-text) !important;
+        font-weight: 500;
+    }
+}
+
+/* Mobile Layout (<= 767px) */
+@media (max-width: 767px) {
+    .main-wrapper {
+        height: 10vh !important;
+    }
+
+    .top-layout {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 32vh !important;
+        border-radius: 0 0 28px 28px;
+        background: var(--accent);
+        box-shadow: 0 4px 15px var(--accent-glow);
+    }
+
+    .top-layout .b-img {
+        position: absolute;
+        opacity: 0.15;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .layered-layout-container,
+    .layered-layout-container.mobile-screen,
+    .mobile-screen .layered-layout-container {
+        margin-top: -12vh !important;
+        display: flex;
+        z-index: 1000;
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    .layered-layout {
+        z-index: 1000 !important;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 20px;
+        background: var(--background-level-3) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--border-low);
+    }
+
+    .pp-dash-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 18px 20px 10px 20px;
+    }
+
+    .profile-photo-dashboard {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .profile-photo-dashboard img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .dashboard-text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 12px;
+    }
+
+    .dashboard-hello {
+        color: var(--text-secondary) !important;
+        font-size: 0.8rem;
+    }
+
+    .dashboard-name {
+        color: var(--main-text) !important;
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    .toolbox-container,
+    .mobile-screen .toolbox-container {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 16px 12px 20px 12px !important;
+        row-gap: 20px !important;
+        column-gap: 8px !important;
+        justify-items: center;
+    }
+
+    .tool-item-icon,
+    .mobile-screen .tool-item-icon {
+        width: 48px !important;
+        height: 48px !important;
+        background: #f0f5ff !important;
+        border: 1px solid var(--border-low) !important;
+        border-radius: 14px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .tool-item-icon span,
+    .tool-item-icon i,
+    .mobile-screen .tool-item-icon span,
+    .mobile-screen .tool-item-icon i {
+        font-size: 1.35rem !important;
+        color: var(--golden-solid, var(--accent)) !important;
+        margin: 0 !important;
+    }
+
+    .tool-item-icon:active,
+    .mobile-screen .tool-item-icon:active {
+        transform: scale(0.92);
+        background: var(--accent) !important;
+    }
+
+    .tool-item-icon:active span,
+    .tool-item-icon:active i,
+    .mobile-screen .tool-item-icon:active span,
+    .mobile-screen .tool-item-icon:active i {
+        color: #ffffff !important;
+    }
+
+    .tool-item-text,
+    .mobile-screen .tool-item-text {
+        width: 100%;
+        margin-top: 8px !important;
+        font-size: 0.68rem !important;
+        font-weight: 500 !important;
+        color: var(--main-text) !important;
+        text-align: center;
+        line-height: 1.15;
+        opacity: 1 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        word-break: break-word;
+    }
+}
+/* Bottom nav: stronger top line so it stands out from content in light mode */
+@media (max-width: 801px) {
+    body .mobile-bottom-bar {
+        border-top: 1px solid color-mix(in srgb, var(--main-text) 30%, var(--border-medium));
+        box-shadow: 0 -6px 18px color-mix(in srgb, var(--main-text) 12%, transparent);
+    }
+}
+
+/* Dashboard toolbox sits on a dark photo banner: keep its text white */
+.toolbox-main-container .custom-form-label,
+.toolbox-main-container .tool-item-text,
+.mobile-screen .toolbox-main-container .tool-item-text {
+    color: #ffffff !important;
+}

@@ -1,0 +1,81 @@
+/* microspace-v1.0.9a */
+
+.pic-form-container {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+}
+
+.pic-side {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.pic-side-title {
+    font-size: 2rem;
+    padding: 5%;
+}
+
+.pic-side-title strong {
+    color: rgb(187, 217, 255);
+}
+
+.pic-side img {
+    max-width: 80%;
+    height: auto;
+}
+
+.form-side {
+    width: 60%;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.form-side::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.form-side .custom-form-side-label {
+    opacity: 0.8;
+    font-size: smaller;
+    margin-bottom: 1%;
+    font-weight: lighter;
+}
+
+.form-side .custom-form-side-label-2 {
+    opacity: 0.8;
+    font-size: smaller;
+    margin-bottom: 1%;
+    font-weight: bold;
+}
+
+@media (max-width: 801px) {
+    .pic-form-container {
+        flex-direction: column;
+    }
+
+    .pic-side {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1.25rem 0 0.5rem;
+    }
+
+    .pic-side img {
+        max-width: 45%;
+    }
+
+    .form-side {
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+    }
+}

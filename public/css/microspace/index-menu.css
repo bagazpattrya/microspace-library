@@ -1,0 +1,134 @@
+/* Index Menu Standard (index-menu.php section 3). Shared by every index page. */
+.idx-toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; }
+.idx-toolbar form.idx-search { flex: 1 1 auto; min-width: 0; margin: 0; }
+.idx-toolbar .month-nav { flex: 0 0 auto; } /* month picker keeps its width, search takes the rest */
+@media (max-width: 575.98px) { .idx-toolbar { flex-wrap: wrap; } .idx-toolbar .month-nav { flex: 1 0 100%; } } /* phones: month picker on its own first line */
+.idx-toolbar .input-group > * { height: 40px; }
+.idx-toolbar .input-group .form-control {
+    border-radius: 999px 0 0 999px !important;
+    min-width: 0;
+    font-size: 0.8rem;
+    border: 1px solid var(--bs-border-color) !important;
+}
+.idx-toolbar .input-group .btn {
+    border-radius: 0 999px 999px 0 !important;
+    border: 1px solid var(--bs-border-color) !important;
+    --bs-btn-border-color: var(--bs-border-color) !important;
+    color: var(--bs-secondary-color) !important;
+    background-color: var(--bs-body-bg) !important;
+    box-shadow: none !important;
+}
+.idx-toolbar .input-group .btn:hover,
+.idx-toolbar .input-group .btn:focus,
+.idx-toolbar .input-group .btn:active {
+    border: 1px solid var(--bs-border-color) !important;
+    --bs-btn-border-color: var(--bs-border-color) !important;
+    color: var(--bs-body-color) !important;
+    background-color: var(--bs-body-bg) !important;
+    box-shadow: none !important;
+}
+.idx-toolbar .input-group .form-control { border-right: 0 !important; }
+.idx-toolbar .input-group .btn,
+.idx-toolbar .input-group .btn:hover,
+.idx-toolbar .input-group .btn:focus,
+.idx-toolbar .input-group .btn:active { border-left: 0 !important; margin-left: 0; }
+.idx-toolbar .input-group .form-control:focus { box-shadow: none !important; outline: 0 !important; border-color: var(--bs-border-color) !important; }
+.idx-toolbar .input-group { border-radius: 999px; transition: box-shadow .2s ease; }
+.idx-toolbar .input-group:focus-within { box-shadow: 0 0 0 1px var(--primary-color, #1e6fd9), 0 0 0 4px color-mix(in srgb, var(--primary-color, #1e6fd9) 18%, transparent); }
+.idx-toolbar .input-group:focus-within .form-control,
+.idx-toolbar .input-group:focus-within .btn { border-color: transparent !important; }
+.idx-toolbar .input-group .btn > i { opacity: .45; transition: opacity .2s ease; }
+.idx-toolbar .input-group:hover .btn > i,
+.idx-toolbar .input-group:focus-within .btn > i { opacity: .8; }
+.idx-group { flex: 0 0 auto; }
+.idx-group .btn {
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 0 10px;
+    border: 1px solid var(--bs-border-color) !important;
+    --bs-btn-border-color: var(--bs-border-color) !important;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.idx-group .btn i { font-size: 0.7rem; }
+/* :hover only on real pointers and :focus-visible only for keyboard, so a click/tap never leaves the highlight stuck. */
+.idx-group .btn:focus-visible,
+.idx-group .btn.show,
+.idx-group .btn:active {
+    background-color: var(--primary-color, #1e6fd9) !important;
+    border-color: var(--primary-color, #1e6fd9) !important;
+    color: var(--primary-text-color, #ffffff) !important;
+}
+@media (hover: hover) {
+    .idx-group .btn:hover {
+        background-color: var(--primary-color, #1e6fd9) !important;
+        border-color: var(--primary-color, #1e6fd9) !important;
+        color: var(--primary-text-color, #ffffff) !important;
+    }
+}
+.idx-toolbar .dropdown-item:hover,
+.idx-toolbar .dropdown-item:focus,
+.idx-toolbar .dropdown-item.active,
+.idx-toolbar .dropdown-item:active {
+    background-color: var(--primary-color, #1e6fd9) !important;
+    color: var(--primary-text-color, #ffffff) !important;
+}
+.idx-group > .btn-group:first-child > .btn { border-radius: 999px 0 0 999px; }
+.idx-group > .btn-group:last-child > .btn { border-radius: 0 999px 999px 0; }
+.idx-group > .btn-group:only-child > .btn { border-radius: 999px; }
+.idx-group > .btn-group:not(:first-child):not(:last-child) > .btn { border-radius: 0; }
+.idx-group > .btn-group + .btn-group { margin-left: -1px; }
+.idx-group > .btn-group > .btn { transition: background-color .2s ease, color .2s ease, transform .2s cubic-bezier(.34,1.56,.64,1); }
+.idx-group > .btn-group > .btn > i { display: inline-block; transform-origin: 50% 70%; }
+.idx-group > .btn-group > .btn:focus:not(:focus-visible) { outline: 0; box-shadow: none; }
+@media (hover: hover) { .idx-group > .btn-group > .btn:hover { transform: translateY(-1px); } }
+.idx-group > .btn-group > .btn:active { transform: scale(.95); }
+.idx-group > .btn-group > .btn[aria-label="Ringkasan"]:hover > i { animation: idx-ico-bars .5s cubic-bezier(.34,1.56,.64,1); }
+.idx-group > .btn-group > .btn[aria-label="Status"]:hover > i { animation: idx-ico-wiggle .5s ease; }
+.idx-group > .btn-group > .btn[aria-label="Aksi"]:hover > i { animation: idx-ico-bob .5s ease; }
+@keyframes idx-ico-bars { 0%,100% { transform: scale(1); } 35% { transform: scale(1.25, .8); } 65% { transform: scale(.9, 1.25); } }
+@keyframes idx-ico-wiggle { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-14deg) scale(1.1); } 55% { transform: rotate(10deg) scale(1.1); } 80% { transform: rotate(-4deg); } }
+@keyframes idx-ico-bob { 0%,100% { transform: translateY(0); } 30% { transform: translateY(-4px); } 60% { transform: translateY(1px); } }
+@media (prefers-reduced-motion: reduce) {
+    .idx-group > .btn-group > .btn { transition: none; }
+    .idx-group > .btn-group > .btn:hover, .idx-group > .btn-group > .btn:active { transform: none; }
+    .idx-group > .btn-group > .btn > i, .idx-group > .btn-group > .btn > span { animation: none !important; }
+}
+.idx-toolbar .dropdown-menu { min-width: 180px; max-height: 60vh; overflow-y: auto; border: 1px solid var(--bs-border-color) !important; }
+.idx-toolbar .dropdown-item { font-size: 0.8rem; }
+.hide-scrollbar { overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; } /* Firefox / old Edge */
+.hide-scrollbar::-webkit-scrollbar, .dataTables_wrapper::-webkit-scrollbar { display: none; width: 0; height: 0; } /* Chrome / Brave / Safari */
+.dataTables_wrapper { scrollbar-width: none; }
+table tbody tr { cursor: pointer; } /* only for index tables whose rows are clickable */
+
+/* Loading (accounts-style): NO "Memuat..." box. The search button icon animates instead (class .idx-searching on the input-group, set by preXhr/xhr JS in section 4) + old rows fade. */
+div.dataTables_wrapper div.dataTables_processing { display: none !important; }
+.idx-toolbar .input-group .btn > i { display: inline-block; opacity: .45; transition: opacity .2s ease, transform .3s cubic-bezier(.34,1.56,.64,1); }
+.idx-toolbar .input-group:hover .btn > i, .idx-toolbar .input-group:focus-within .btn > i { opacity: .8; }
+.idx-toolbar .input-group.idx-searching .btn > i.bi-arrow-clockwise { opacity: .9; animation: idx-searching .7s linear infinite; }
+.idx-toolbar .input-group.idx-searching .btn > i.bi-search { opacity: .9; animation: idx-searching-lens .8s ease-in-out infinite; }
+.idx-toolbar .input-group.idx-searching .btn:hover > i { transform: none; }
+.idx-toolbar .input-group .btn:hover > i.bi-arrow-clockwise { transform: rotate(90deg); }
+.idx-toolbar .input-group .btn:hover > i.bi-search { transform: scale(1.15) rotate(-10deg); }
+@keyframes idx-searching { to { transform: rotate(360deg); } }
+@keyframes idx-searching-lens { 0%,100% { transform: translate(0,0) rotate(0); } 25% { transform: translate(2px,-2px) rotate(12deg); } 75% { transform: translate(-2px,-1px) rotate(-12deg); } }
+/* applied dropdown button (Status/Aksi) pops when the user picks an item */
+.idx-group > .btn-group > .btn > i { display: inline-block; transform-origin: 50% 70%; }
+.idx-group > .btn-group > .btn.idx-applied > span { animation: idx-label-in .4s cubic-bezier(.34,1.56,.64,1); }
+.idx-group > .btn-group > .btn.idx-applied > i { animation: idx-ico-flip .45s ease; }
+@keyframes idx-label-in { from { opacity: 0; transform: translateY(10px) scale(.9); } to { opacity: 1; transform: none; } }
+@keyframes idx-ico-flip { 0% { transform: rotate(0) scale(1); } 50% { transform: rotate(180deg) scale(1.25); } 100% { transform: rotate(360deg) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .idx-toolbar .input-group.idx-searching .btn > i, .idx-group > .btn-group > .btn > * { animation: none !important; } }
+.dataTables_wrapper .table { transition: opacity .2s ease; }
+.dataTables_wrapper:has(.dataTables_processing[style*="block"]) tbody { opacity: .45; }
+.idx-row-in { animation: idx-row-in .3s ease both; }
+@keyframes idx-row-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .idx-row-in { animation: none; } }
+
+/* Initial-load skeleton rows */
+.idx-skeleton { display: block; height: 14px; border-radius: 7px; background: linear-gradient(90deg, rgba(128,128,128,.12) 25%, rgba(128,128,128,.25) 50%, rgba(128,128,128,.12) 75%); background-size: 200% 100%; animation: idx-skeleton-shimmer 1.2s ease-in-out infinite; }
+.idx-skeleton-row td { padding-top: 1.1rem; padding-bottom: 1.1rem; }
+@keyframes idx-skeleton-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }

@@ -1,0 +1,81 @@
+/* microspace-v1.0.9a */
+
+/* Right top button */
+.side-top-bar.right {
+    position: relative;
+}
+
+/* Menu container */
+.action-menu {
+    position: absolute;
+    top: 56px;
+    right: 16px;
+    width: 260px;
+    background: var(--background-level-4);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    padding: 12px;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 999;
+}
+
+/* Active state */
+.action-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Title */
+.action-menu-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--main-text);
+    padding: 6px 10px 10px;
+}
+
+/* Items */
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 10px;
+    border-radius: 10px;
+    color: var(--main-text);
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.action-item:hover {
+    background: var(--gold-dark-solid);
+}
+
+.action-item span.material-symbols-outlined {
+    font-size: 22px;
+    color: var(--icon-color);
+}
+
+/* Hamburger click: squash almost to zero, then spring back with energy */
+#actionMenuToggle button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#actionMenuToggle.clicked button {
+    animation: action-toggle-pop 0.5s linear;
+}
+
+@keyframes action-toggle-pop {
+    0%   { transform: scale(1); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.4); }
+    22%  { transform: scale(0.05); animation-timing-function: cubic-bezier(0.1, 0.8, 0.3, 1); }
+    55%  { transform: scale(1.35); animation-timing-function: ease-in-out; }
+    75%  { transform: scale(0.92); animation-timing-function: ease-in-out; }
+    90%  { transform: scale(1.05); animation-timing-function: ease-out; }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #actionMenuToggle.clicked button { animation: none; }
+}

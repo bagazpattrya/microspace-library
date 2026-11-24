@@ -1,0 +1,85 @@
+/* microspace-v1.0.9a */
+
+:root {
+    /* === ELEVATED DARK PALETTE === */
+    /* Non-linear progression for better visual separation */
+    --background-level-1: #050506; /* Deepest Base */
+    --background-level-2: #181b21; /* Sidebar & Nav */
+    --background-level-3: #21252c; /* Cards & Panels */
+    --background-level-4: #2c313a; /* Dialogs & Popovers */
+
+    /* === TEXT HIERARCHY === */
+    --main-text: #ffffff; /* Titles & Headings */
+    --text-secondary: #a0aec0; /* Body & Descriptions */
+    --text-muted: #64748b; /* Disabled/Captions */
+
+    /* === INTERACTIVE & BORDERS === */
+    --input-dark-color: #050607 !important;
+    --border-low: rgba(255, 255, 255, 0.05);
+    --border-medium: rgba(255, 255, 255, 0.12);
+
+    /* Using your blue accent from previous styles */
+    --accent: #1e6fd9;
+    --accent-glow: rgba(30, 111, 217, 0.25);
+}
+
+/* === REFINED UTILITIES === */
+.bg-1 {
+    background-color: var(--background-level-1);
+}
+.bg-2 {
+    background-color: var(--background-level-2);
+}
+
+.bg-3 {
+    background-color: var(--background-level-3);
+    border: 1px solid var(--border-low);
+}
+
+.bg-4 {
+    background-color: var(--background-level-4) !important;
+    border: 1px solid var(--border-medium);
+}
+
+.border-low {
+    border: 1px solid var(--border-low) !important;
+}
+.border-medium {
+    border: 1px solid var(--border-medium) !important;
+}
+
+/* Improved Info Contrast */
+.bg-info {
+    background-color: #0ea5e9 !important;
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+/* Active Sidebar Item: subtle lighter pill + accent bar, white content */
+.sidebar-container .item-active,
+.item-active {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    position: relative;
+    border-radius: 10px !important;
+    transform: none !important;
+}
+
+.sidebar-container .item-active .li-item-title,
+.sidebar-container .item-active .li-item-icon,
+.sidebar-container .item-active .li-item-icon i,
+.sidebar-container .item-active i,
+.sidebar-container .item-active .material-symbols-outlined {
+    color: #ffffff !important;
+}
+
+.sidebar-container .li-item-icon,
+.sidebar-container .li-item-icon i,
+.sidebar-container .li-item-icon .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
